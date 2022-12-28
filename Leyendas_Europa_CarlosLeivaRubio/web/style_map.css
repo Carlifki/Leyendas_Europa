@@ -1,0 +1,190 @@
+body{
+    background-color:#60B6BD;    
+}
+    header{
+        position: fixed;  
+        top: 0px;
+        left: 0px;
+        right: 0px;
+
+        background-color: #3E3534;
+        border-top:2px solid #E4DFDF;
+        border-left:2px solid #E4DFDF;
+        border-right:2px solid #E4DFDF;
+        border-bottom:10px solid #E4DFDF;
+        border-bottom-left-radius: 40%;
+        border-bottom-right-radius: 40%;
+        height: 10%;
+
+
+    }
+    .titular{
+        position: relative;
+        margin-top: 1%;
+        text-align: center;
+        vertical-align: top;
+        color: white;
+        font-size: 2em;
+        font-weight: bolder;
+        letter-spacing: 8px;
+        word-spacing: 20px;
+    }
+
+    footer{
+        position: fixed;  
+        bottom: 0px;
+        left: 80%;
+        right: 5%;
+
+        background-color: #3E3534;
+        border:2px solid #E4DFDF;
+        border-top-left-radius: 40%;
+        border-top-right-radius: 40%;
+    }
+    .link-quiz{
+        position: relative;
+        margin-top: 5%;
+        text-align: center;
+        vertical-align: middle;
+        color: white;
+        font-size: 2em;
+        font-weight: bolder;
+        letter-spacing: 8px;
+        word-spacing: 20px;
+    }
+
+
+    .mapadiv{
+        width: 90%;
+        margin: auto;
+    }
+    .mapadiv path{
+        fill: #F9DA88;
+        stroke: black;
+        stroke-width: 2px;
+    }
+    .mapadiv path:hover{
+        fill: #FC4242;
+    }
+    .overlay {
+        /*oscure el fondo */
+        background: rgba(0, 0, 0, 0.397);
+        /* declara la posicon de la ventana */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* la aliineacion del contenido */
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        /* la oculta **/
+        visibility: hidden;
+    }
+    /* muestra la ventana */
+    .overlay.active {
+        visibility: visible;
+    }
+
+    .popup {
+        /* le da color y formato */
+        background: #F8F8F8;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        border-radius: 3px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 20px;
+        text-align: center;
+        /* declara el tamaño de la ventana */
+        width: 40%;
+        height: 90%;
+        /* Animacion de la ventana */
+        transition: .3s ease all;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    /* formato para el boton que ciierra la ventana */
+    .popup .btn-cerrar-popup {
+        font-size: 16px;
+        line-height: 16px;
+        position: relative;
+        top: 0;
+        left: 50%;
+        transition: .3s ease all;
+        color: #BBBBBB;
+    }
+
+    .popup .btn-cerrar-popup:hover {
+        color: #000;
+    }
+
+    /* formato para el titulo de la leyenda */
+    .popup h3 {
+        font-size: 36px;
+        font-weight: 600;
+        position: relative;
+        opacity: 0;
+    }
+
+    /* formato para el texto de la leyenda */
+    .popup-content-text {
+        font-size: 15px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        position: relative;
+        opacity: 0;
+        /* tamaño que ocupa */
+        height: 35%;
+        /* en caso de necesitar mas espacio le pone un scroll */
+        overflow: auto;
+
+    }
+
+    /* elimina el formato standart para los enlaces */
+    a{
+        text-decoration: none;
+    }
+
+    /* declara el tamaño para las imagenes */
+    img{
+        width: auto;
+        position: relative;
+        max-height: 150px;
+        bottom: 10px;
+    }
+    @media (min-height: 1250px){
+        .img{
+            width: auto;
+            max-height: 600px;
+        }
+    }
+
+    /*Animaciones */
+    .popup.active {	transform: scale(1); opacity: 1; }
+    .popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+    .popup.active .popup-content-text { animation: entradaSubtitulo .8s ease .5s forwards; }
+    .popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+    @keyframes entradaTitulo {
+        from {
+            opacity: 0;
+            transform: translateY(-25px);
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes entradaSubtitulo {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
